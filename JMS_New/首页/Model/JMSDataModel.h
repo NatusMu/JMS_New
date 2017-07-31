@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+@class JMSData;
 
 @interface JMSDataModel : NSObject
++(instancetype) sharedStore;
+-(BOOL)savaChanges;
+-(NSArray *)allItems;
+-(void)createItem;
 
 @end

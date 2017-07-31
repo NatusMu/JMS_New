@@ -10,4 +10,8 @@
 
 @implementation JMSData (CoreDataProperties)
 
+@dynamic orderValue;
+@dynamic searchTerm;
+@dynamic city;
+@dynamic historyData;
 @end

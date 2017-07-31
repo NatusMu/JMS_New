@@ -7,17 +7,46 @@
 //
 
 #import "JMSShopViewController.h"
-
+#import "SideSwitchViewController.h"
+#import "JMSShopAllController.h"
+#import "JMSShopPayController.h"
+#import "JMSShopReceiveController.h"
+#import "JMSShopFinishController.h"
 @interface JMSShopViewController ()
-
 @end
-
 @implementation JMSShopViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self create];
+        // Do any additional setup after loading the view.
 }
+-(void)create{
+    JMSShopAllController *All = [[JMSShopAllController alloc]init];
+    JMSShopPayController *Pay = [[JMSShopPayController alloc]init];
+    JMSShopReceiveController *Receive = [[JMSShopReceiveController alloc]init];
+    JMSShopFinishController *Finish = [[JMSShopFinishController alloc]init];
+    SideSwitchViewController *sideSwitchController = [[SideSwitchViewController alloc]initViewContollreWithTitles:@[@"全部订单",@"待付款",@"待收货",@"完成"] controllers:@[All,Pay,Receive,Finish] TitleHeight:40 present:YES];
+    
+    sideSwitchController.title = @"";
+    
+    [self presentViewController:sideSwitchController animated:NO completion:nil];
+}
+#pragma mark - 点击跳转
+//-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+//    JMSShopAllController *All = [[JMSShopAllController alloc]init];
+//    JMSShopPayController *Pay = [[JMSShopPayController alloc]init];
+//    JMSShopReceiveController *Receive = [[JMSShopReceiveController alloc]init];
+//    JMSShopFinishController *Finish = [[JMSShopFinishController alloc]init];
+//    SideSwitchViewController *sideSwitchController = [[SideSwitchViewController alloc]initViewContollreWithTitles:@[@"全部订单",@"待付款",@"待收货",@"完成"] controllers:@[All,Pay,Receive,Finish] TitleHeight:40 present:YES];
+//    
+//    sideSwitchController.title = @"";
+//    
+//    [self presentViewController:sideSwitchController animated:YES completion:nil];
+//    
+//}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

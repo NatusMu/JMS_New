@@ -9,5 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface ToolClass : NSObject
+#pragma mark -- 判断登陆
++(BOOL)isLogin;
 
+#pragma mark --适配高度
 @end
+

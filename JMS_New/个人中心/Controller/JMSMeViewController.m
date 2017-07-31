@@ -96,7 +96,8 @@
     return headView;
 }
 -(void)loginBtn:(UIButton*)btn{
-    JMSLoginViewController * vc = [[JMSLoginViewController alloc]initWithNibName:@"JMSLoginViewController" bundle:nil];
+    JMSLoginViewController *vc = [[JMSLoginViewController alloc]init];
+    //JMSLoginViewController *vcc = [[JMSLoginViewController alloc]initWithNibName:@"JMSLoginViewController" bundle:nil];
     [self presentViewController:vc animated:YES completion:nil];
 }
 -(void)setBtn:(UIButton*)btn{

@@ -78,11 +78,11 @@
 }
 
 - (NSString *)cacheRequestFileName:(NSString *)requestUrl {
-    return [Util md5Hash:requestUrl];
+    return [Utils md5Hash:requestUrl];
 }
 
 - (NSString *)cacheRequestOtherInfoFileName:(NSString *)requestUrl {
-    return [Util md5Hash:[NSString stringWithFormat:@"%@-otherInfo", requestUrl]];
+    return [Utils md5Hash:[NSString stringWithFormat:@"%@-otherInfo", requestUrl]];
 }
 
 - (NSCachedURLResponse *)dataFromRequest:(NSURLRequest *)request {

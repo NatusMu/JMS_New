@@ -7,7 +7,8 @@
 //
 
 #import "JMSCityViewController.h"
-
+#import "JMSData.h"
+#import "JMSDataModel.h"
 @interface JMSCityViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableview;
 @property (nonatomic,strong) NSMutableArray *dataSource;//服务器数据
@@ -18,6 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initNav];
+    [self initData];
+    [self initTableView];
     // Do any additional setup after loading the view.
 }
 -(void)initNav
@@ -150,7 +154,7 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    FYData *item = [[FYDataModel sharedStore] allItems][0];
+    JMSData *item = [[JMSDataModel sharedStore] allItems][0];
     item.city = [[self.dataSource[indexPath.section] objectAtIndex:indexPath.row] objectForKey:@"name"];
     [self dismissViewControllerAnimated:YES completion:nil];
 }

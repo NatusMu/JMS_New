@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface Utils : NSObject
++ (NSString *)sha1:(NSString *)str;
+
++ (NSString *)md5Hash:(NSString *)str;
 
 @end

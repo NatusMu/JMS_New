@@ -40,7 +40,7 @@ static NSString *FooterID = @"FooterID";
 }
 #pragma mark -设置隐藏navigation导航栏
 -(void)viewWillDisappear:(BOOL)animated{
-    self.navigationController.navigationBarHidden = YES;
+    self.navigationController.navigationBarHidden = NO;
 }
 -(void)viewWillAppear:(BOOL)animated{
     self.navigationController.navigationBarHidden =YES;
@@ -135,8 +135,10 @@ static NSString *FooterID = @"FooterID";
     return [_dataArray[section] count];
 }
 -(void)login_Btn:(id)sender{
-    JMSLoginViewController * vc = [[JMSLoginViewController alloc]initWithNibName:@"JMSLoginViewController" bundle:nil];
-    [self presentViewController:vc animated:YES completion:nil];
+    //JMSLoginViewController * vc = [[JMSLoginViewController alloc]initWithNibName:@"JMSLoginViewController" bundle:nil];
+    JMSLoginViewController * vc = [[JMSLoginViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:NO];
+    //[self presentViewController:vc animated:YES completion:nil];
 }
 //-(void)setBtn:(id)sender{
 //    

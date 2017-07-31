@@ -22,11 +22,11 @@
     return self;
 }
 -(void)setupSubviews{
-    self.imageButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, Width/3,Height/6)];
+    self.imageButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH/3,SCREEN_HEIGHT/6)];
     self.imageButton.backgroundColor = [UIColor whiteColor];
     [self.contentView addSubview:self.imageButton];
     
-    self.textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, Width/3, Height/6)];
+    self.textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH/3, SCREEN_HEIGHT/6)];
     self.textLabel.textColor = [UIColor blackColor];
     self.textLabel.font = [UIFont systemFontOfSize:20];
     self.textLabel.textAlignment = NSTextAlignmentCenter;
